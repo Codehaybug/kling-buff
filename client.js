@@ -9,7 +9,7 @@ async function generatePassword(length = 10) {
 
 async function fetchEmail() {
   try {
-    const res = await fetch('https://kling-buff.netlify.app/api/create-email', {
+    const res = await fetch('https://kling-buff.vercel.app/api/create-email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ domainId: 'RG9tYWluOjI=' })
@@ -31,7 +31,7 @@ async function fetchEmail() {
 async function fetchVerificationCode(sessionId) {
   for (let i = 0; i < 30; i++) {
     try {
-      const res = await fetch(`https://kling-buff.netlify.app/api/check-email`, {
+      const res = await fetch(`https://kling-buff.vercel.app/api/check-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ sessionId })
